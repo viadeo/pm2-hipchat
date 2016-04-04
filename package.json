@@ -1,0 +1,56 @@
+{
+  "name": "pm2-hipchat",
+  "version": "0.0.1",
+  "description": "A PM2 module to emit events to Slack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mauron85/pm2-hipchat"
+  },
+  "keywords": [
+    "pm2",
+    "hipchat"
+  ],
+  "author": "Marian Hello (https://github.com/mauron85)",
+  "contributors": [
+    {
+      "name": "Matt Atkinson",
+      "email": "mattpker@gmail.com",
+      "url": "https://github.com/mattpker"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/mauron85/pm2-hipchat/blob/master/LICENSE"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/mauron85/pm2-hipchat/issues"
+  },
+  "homepage": "https://github.com/mauron85/pm2-hipchat",
+  "dependencies": {
+    "node-hipchat": "^0.4.5",
+    "pm2": "^0.15.10",
+    "pmx": "^0.5.5"
+  },
+  "config": {
+    "api_key": null,
+    "room": null,
+    "notify": false,
+    "log": false,
+    "error": true,
+    "kill": true,
+    "exception": true,
+    "restart": false,
+    "delete": false,
+    "stop": false,
+    "restart overlimit": true,
+    "exit": false,
+    "start": false,
+    "online": false
+  }
+}

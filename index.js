@@ -50,7 +50,7 @@ function send(message) {
         notify: !!conf.notify
     };
 
-    // Finally, make the post request to the Slack Incoming Webhook
+    // Finally, make the post message to the Hipchat
     HC.postMessage(options, function(data) {
       // Message has been sent!
     });
@@ -59,7 +59,7 @@ function send(message) {
 // Function to process the message queue
 function processQueue() {
 
-    // If we have a message in the message queue, removed it from the queue and send it to slack
+    // If we have a message in the message queue, removed it from the queue and send it to HipChat
     if (messages.length > 0) {
         send(messages.shift());
     }
@@ -70,7 +70,7 @@ function processQueue() {
             suppressed.isSuppressed = true;
             suppressed.date = new Date().getTime();
             send({
-                name: 'pm2-slack',
+                name: 'pm2-hipchat',
                 event: 'suppressed',
                 description: 'Messages are being suppressed due to rate limiting.'
             });
@@ -95,7 +95,7 @@ pm2.launchBus(function(err, bus) {
     // Listen for process logs
     if (conf.log) {
         bus.on('log:out', function(data) {
-            if (data.process.name !== 'pm2-slack') {
+            if (data.process.name !== 'pm2-hipchat') {
                 messages.push({
                     name: data.process.name,
                     event: 'log',
@@ -108,7 +108,7 @@ pm2.launchBus(function(err, bus) {
     // Listen for process errors
     if (conf.error) {
         bus.on('log:err', function(data) {
-            if (data.process.name !== 'pm2-slack') {
+            if (data.process.name !== 'pm2-hipchat') {
                 messages.push({
                     name: data.process.name,
                     event: 'error',
@@ -132,7 +132,7 @@ pm2.launchBus(function(err, bus) {
     // Listen for process exceptions
     if (conf.exception) {
         bus.on('process:exception', function(data) {
-            if (data.process.name !== 'pm2-slack') {
+            if (data.process.name !== 'pm2-hipchat') {
                 messages.push({
                     name: data.process.name,
                     event: 'exception',
@@ -145,7 +145,7 @@ pm2.launchBus(function(err, bus) {
     // Listen for PM2 events
     bus.on('process:event', function(data) {
         if (conf[data.event]) {
-            if (data.process.name !== 'pm2-slack') {
+            if (data.process.name !== 'pm2-hipchat') {
                 messages.push({
                     name: data.process.name,
                     event: data.event,

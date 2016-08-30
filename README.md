@@ -47,6 +47,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+- 1.0.0 fork for viadeoteam
 - 0.0.3 replace slack ref leftovers
 - 0.0.2 replace slack ref leftovers
 - 0.0.1 Initial Release

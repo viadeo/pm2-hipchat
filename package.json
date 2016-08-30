@@ -1,6 +1,6 @@
 {
   "name": "pm2-hipchat",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "A PM2 module to emit events to Hipchat",
   "main": "index.js",
   "scripts": {
@@ -8,34 +8,34 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mauron85/pm2-hipchat"
+    "url": "https://github.com/viadeo/pm2-hipchat"
   },
   "keywords": [
     "pm2",
     "hipchat"
   ],
-  "author": "Marian Hello (https://github.com/mauron85)",
+  "author": "Gilles Perreymond (https://github.com/gperreymond)",
   "contributors": [
     {
-      "name": "Matt Atkinson",
-      "email": "mattpker@gmail.com",
-      "url": "https://github.com/mattpker"
+      "name": "Gilles Perreymond",
+      "email": "gperreymond@viadeoteam.com",
+      "url": "https://github.com/viadeo"
     }
   ],
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/mauron85/pm2-hipchat/blob/master/LICENSE"
+      "url": "https://github.com/viadeo/pm2-hipchat/blob/master/LICENSE"
     }
   ],
   "bugs": {
-    "url": "https://github.com/mauron85/pm2-hipchat/issues"
+    "url": "https://github.com/viadeo/pm2-hipchat/issues"
   },
-  "homepage": "https://github.com/mauron85/pm2-hipchat",
+  "homepage": "https://github.com/viadeo/pm2-hipchat",
   "dependencies": {
-    "node-hipchat": "^0.4.5",
-    "pm2": "^0.15.10",
-    "pmx": "^0.5.5"
+    "node-hipchat": "0.4.5",
+    "pm2": "0.15.10",
+    "pmx": "0.5.5"
   },
   "config": {
     "api_key": null,

@@ -1,6 +1,6 @@
 {
   "name": "pm2-hipchat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A PM2 module to emit events to Hipchat",
   "main": "index.js",
   "scripts": {
@@ -42,15 +42,15 @@
     "room": null,
     "notify": false,
     "log": false,
-    "error": true,
+    "error": false,
     "kill": true,
     "exception": true,
-    "restart": false,
+    "restart": true,
     "delete": false,
     "stop": false,
     "restart overlimit": true,
-    "exit": false,
+    "exit": true,
     "start": false,
-    "online": false
+    "online": true
   }
 }
